@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<title>jQuery Mobile</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head>
+
+<body>
+ 
+	<div data-role="page" id="home">
+		<!-- the div below is the home page's header -->
+	<div data-role="header">
+		<h1>Home</h1>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#home" class="ui-btn-active ui-state-persist" data-icon="home">Home</a></li>
+				<li><a href="#contact" data-icon="grid">Contact</a></li>
+			</ul>
+		</div>
+	</div>				
+	<!-- the div below is the home page's main content -->
+	<div data-role="content">
+		<p>homepage content homepage content</p>
+		<p class='horver'>orientation homepage contentorientation homepage orientation content</p>
+	</div>
+
+	<!-- the div below is the home page's footer -->
+	<div data-role="footer">
+		<h4><a href="mailto:info@example.com">info@example.com</a></h4>
+	</div>
+</div>
+
+<div data-role='page'>
+	<div data-role='header'>
+		<h1>Header</h1>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+				<li><a href="#contact" data-icon="grid">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="content">
+		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat ratione quidem adipisci soluta sapiente accusantium praesentium dolores modi sed dolorum rem aliquam necessitatibus in quam velit, possimus saepe obcaecati ab?</p>
+		<p class='horver'></p>
+	</div>
+	
+	<div data-role="footer"> 
+	<h4><a href="mailto:info@example.com">info@example.com</a></h4>
+	</div>
+	
+</div>
+	 
+<script>
+	 //handler for orientation-change event:
+	 $(window).on('orientationchange', function(event) {
+        //on orientation change, set content of div with appropriate text:
+        $('.horver').html('You are in <em>' + event.orientation + '</em> mode.');
+    });
+    //call event handler when page first loads, to set orientation message:
+	$(window).orientationchange();
+	
+</script>
+</body>
+</html>
